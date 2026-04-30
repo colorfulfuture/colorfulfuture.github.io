@@ -353,6 +353,14 @@
       line-height: 1.7;
     }
 
+    /* Visitor Map */
+    .visitor-map {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0 1rem;
+      border-top: 1px solid var(--border);
+    }
+
     /* Footer */
     footer {
       max-width: var(--max-width);
@@ -444,13 +452,13 @@
       <li><span class="news-pin">Pinned</span> <span class="news-text">Paper list of trajectory/motion prediction. Welcome to Star and Contribute! <a href="https://github.com/colorfulfuture/Awesome-Trajectory-Motion-Prediction-Papers" target="_blank">[GitHub]</a> <a href="https://zhuanlan.zhihu.com/p/480433722" target="_blank">[Zhihu]</a></span></li>
       <li><span class="news-pin">Pinned</span> <span class="news-text">Released an LLM-based trajectory prediction survey on <a href="https://arxiv.org/abs/2506.03408" target="_blank">arXiv</a> with <a href="https://github.com/colorfulfuture/Awesome-Trajectory-Motion-Prediction-Papers/blob/main/llm_based_survey.md" target="_blank">GitHub Repo</a>.</span></li>
       <li><span class="news-pin">Pinned</span> <span class="news-text">Released Awesome-Spatial-VLMs survey on <a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.176231405.57942913/v2" target="_blank">TechRxiv</a> with <a href="https://github.com/vulab-AI/Awesome-Spatial-VLMs" target="_blank">GitHub Repo</a>.</span></li>
-      <li><span class="news-date">02/2026</span> <span class="news-text">One paper accepted by <strong>CVPR 2026</strong>.</span></li>
-      <li><span class="news-date">02/2026</span> <span class="news-text">Joined <strong>Bosch Center for Artificial Intelligence</strong> as Research Scientist.</span></li>
-      <li><span class="news-date">02/2026</span> <span class="news-text">One paper on improving robustness and reliability in VLMs accepted by <strong>ICLR 2026</strong>.</span></li>
-      <li><span class="news-date">12/2025</span> <span class="news-text">Successfully defended PhD thesis!</span></li>
-      <li><span class="news-date">10/2025</span> <span class="news-text">One extension paper on unified trajectory imputation and prediction accepted by <strong>TPAMI</strong>.</span></li>
-      <li><span class="news-date">08/2025</span> <span class="news-text">Two papers on time-series representation learning &amp; trajectory modeling accepted by <strong>ICDM 2025</strong>; one paper on end-to-end autonomous driving + VLM accepted by <strong>CoRL 2025</strong>.</span></li>
-      <li><span class="news-date">01/2025</span> <span class="news-text">One paper on unified trajectory generation accepted by <strong>ICLR 2025</strong>. <a href="https://github.com/colorfulfuture/UniTraj-pytorch" target="_blank">[Code]</a></span></li>
+      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">One paper accepted by <strong>CVPR 2026</strong>.</span></li>
+      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">Joined <strong>Bosch Center for Artificial Intelligence</strong> as Research Scientist.</span></li>
+      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">One paper on improving robustness and reliability in VLMs accepted by <strong>ICLR 2026</strong>.</span></li>
+      <li class="news-hidden"><span class="news-date">12/2025</span> <span class="news-text">Successfully defended PhD thesis!</span></li>
+      <li class="news-hidden"><span class="news-date">10/2025</span> <span class="news-text">One extension paper on unified trajectory imputation and prediction accepted by <strong>TPAMI</strong>.</span></li>
+      <li class="news-hidden"><span class="news-date">08/2025</span> <span class="news-text">Two papers on time-series representation learning &amp; trajectory modeling accepted by <strong>ICDM 2025</strong>; one paper on end-to-end autonomous driving + VLM accepted by <strong>CoRL 2025</strong>.</span></li>
+      <li class="news-hidden"><span class="news-date">01/2025</span> <span class="news-text">One paper on unified trajectory generation accepted by <strong>ICLR 2025</strong>. <a href="https://github.com/colorfulfuture/UniTraj-pytorch" target="_blank">[Code]</a></span></li>
       <li class="news-hidden"><span class="news-date">02/2024</span> <span class="news-text">Two papers accepted by <strong>CVPR 2024</strong>.</span></li>
       <li class="news-hidden"><span class="news-date">09/2023</span> <span class="news-text">One paper on adaptive optimizer design accepted by <strong>ICDM 2023</strong>; one on graph structure learning accepted by <strong>NeurIPS 2023</strong>.</span></li>
       <li class="news-hidden"><span class="news-date">07/2023</span> <span class="news-text">One paper on layout prediction accepted by <strong>ACM MM 2023</strong>.</span></li>
@@ -784,6 +792,10 @@
 
 </main>
 
+<div class="visitor-map">
+  <script type='text/javascript' id='clustrmaps' src='//clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400'></script>
+</div>
+
 <footer>
   &copy; 2026 Yi Xu. Hosted on <a href="https://github.com/colorfulfuture/colorfulfuture.github.io" target="_blank">GitHub</a>.
 </footer>
@@ -791,8 +803,9 @@
 <script>
 function toggleNews(btn) {
   var items = document.querySelectorAll('.news-hidden');
-  var showing = items[0].style.display === 'flex';
+  var showing = btn.dataset.expanded === 'true';
   items.forEach(function(el) { el.style.display = showing ? 'none' : 'flex'; });
+  btn.dataset.expanded = showing ? 'false' : 'true';
   btn.textContent = showing ? 'Show more' : 'Show less';
 }
 </script>
