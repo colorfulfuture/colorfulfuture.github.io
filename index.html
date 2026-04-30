@@ -368,10 +368,11 @@
       margin-bottom: 1.2rem;
     }
     .map-container {
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
+      min-height: 260px;
     }
- 
+    
     /* Footer */
     footer {
       max-width: var(--max-width);
@@ -813,7 +814,7 @@
 </main>
  
 <!-- Visitor Map -->
-<div class="visitor-map">
+<!-- <div class="visitor-map">
   <h2>Visitors</h2>
   <div class="map-container">
   <script
@@ -822,6 +823,11 @@
     src="https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400">
   </script>
   </div>
+</div> -->
+
+<div class="visitor-map">
+  <h2>Visitors</h2>
+  <div class="map-container" id="clustrmaps-container"></div>
 </div>
 
 <footer>
@@ -875,6 +881,20 @@
         expandNews();
       }
     });
+  })();
+</script>
+
+<script>
+  (function() {
+    const container = document.getElementById('clustrmaps-container');
+    if (!container) return;
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'clustrmaps';
+    script.src = 'https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400';
+
+    container.appendChild(script);
   })();
 </script>
 
