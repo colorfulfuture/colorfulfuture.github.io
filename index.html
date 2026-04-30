@@ -21,19 +21,19 @@
       --border: #e2e8f0;
       --max-width: 900px;
     }
-
+ 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text);
       line-height: 1.7;
       background: var(--bg);
     }
-
+ 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
+ 
     /* Navigation */
     nav {
       position: fixed;
@@ -66,14 +66,14 @@
       transition: color 0.2s;
     }
     nav .nav-links a:hover { color: var(--accent); text-decoration: none; }
-
+ 
     /* Main */
     main {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 80px 2rem 4rem;
     }
-
+ 
     /* Profile Section */
     .profile {
       display: flex;
@@ -147,21 +147,21 @@
       color: var(--text-light);
     }
     .profile-contact a { color: var(--accent); }
-
+ 
     /* Sections */
     section {
       padding: 2rem 0;
       border-bottom: 1px solid var(--border);
     }
     section:last-child { border-bottom: none; }
-
+ 
     h2 {
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 1.2rem;
     }
-
+ 
     /* News */
     .news-list { list-style: none; }
     .news-list li {
@@ -210,7 +210,7 @@
       background: var(--accent);
       color: #fff;
     }
-
+ 
     /* Education */
     .edu-item {
       display: flex;
@@ -236,7 +236,7 @@
       color: var(--text-light);
       margin-top: 0.1rem;
     }
-
+ 
     /* Research Interests Tags */
     .tags {
       display: flex;
@@ -251,7 +251,7 @@
       font-size: 0.85rem;
       color: var(--text);
     }
-
+ 
     /* Publications */
     .pub-list { list-style: none; }
     .pub-list li {
@@ -287,7 +287,7 @@
       text-decoration: none;
     }
     .me { font-weight: 600; }
-
+ 
     /* Experience */
     .exp-item {
       display: flex;
@@ -322,7 +322,7 @@
       color: var(--text-light);
       margin-top: 0.2rem;
     }
-
+ 
     /* Teaching & Awards */
     .simple-list {
       list-style: none;
@@ -338,7 +338,7 @@
       color: var(--accent);
       font-weight: 700;
     }
-
+ 
     /* Service */
     .service-group { margin-bottom: 1rem; }
     .service-group h3 {
@@ -352,15 +352,21 @@
       color: var(--text-light);
       line-height: 1.7;
     }
-
+ 
     /* Visitor Map */
     .visitor-map {
-      display: flex;
-      justify-content: center;
-      padding: 2rem 0 1rem;
-      border-top: 1px solid var(--border);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 2rem 1rem;
+      text-align: center;
     }
-
+    .visitor-map h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+ 
     /* Footer */
     footer {
       max-width: var(--max-width);
@@ -371,7 +377,7 @@
       color: var(--text-light);
       border-top: 1px solid var(--border);
     }
-
+ 
     /* Responsive */
     @media (max-width: 700px) {
       .profile { flex-direction: column; align-items: center; text-align: center; }
@@ -387,7 +393,7 @@
   </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="nav-inner">
     <span class="nav-name">Homepage of Yi Xu</span>
@@ -403,9 +409,9 @@
     </div>
   </div>
 </nav>
-
+ 
 <main>
-
+ 
   <!-- Profile -->
   <section class="profile" id="about">
     <img class="profile-photo" src="assets/yixu.png" alt="Yi Xu">
@@ -422,7 +428,7 @@
       <div class="profile-bio">
         I am a Research Scientist working on autonomous driving intelligence. My long-term goal is to advance autonomous driving from modular pipelines toward unified, foundation-model-driven systems that are robust, adaptable, and deployable in safety-critical environments. I am open to research collaborations in autonomous driving, VLM, and VLA that advance next-generation intelligent systems.
         <div class="highlight">
-          <i class="fas fa-bullhorn"></i> Our team at the Bosch Center for Artificial Intelligence alwasy has <strong> internship openings</strong> for research on VLA+AD and related topics. Feel free to reach out!
+          <i class="fas fa-bullhorn"></i> Our team at the Bosch Center for Artificial Intelligence always has <strong> internship openings</strong> for research on VLA+AD and related topics. Feel free to reach out!
         </div>
       </div>
       <div class="profile-contact">
@@ -431,7 +437,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Research Interests -->
   <section id="interests">
     <h2>Research Interests</h2>
@@ -444,21 +450,24 @@
       <span>Basketball</span>
     </div>
   </section>
-
+ 
   <!-- News -->
   <section id="news">
     <h2>News</h2>
     <ul class="news-list">
+      <!-- Pinned items - always visible -->
       <li><span class="news-pin">Pinned</span> <span class="news-text">Paper list of trajectory/motion prediction. Welcome to Star and Contribute! <a href="https://github.com/colorfulfuture/Awesome-Trajectory-Motion-Prediction-Papers" target="_blank">[GitHub]</a> <a href="https://zhuanlan.zhihu.com/p/480433722" target="_blank">[Zhihu]</a></span></li>
       <li><span class="news-pin">Pinned</span> <span class="news-text">Released an LLM-based trajectory prediction survey on <a href="https://arxiv.org/abs/2506.03408" target="_blank">arXiv</a> with <a href="https://github.com/colorfulfuture/Awesome-Trajectory-Motion-Prediction-Papers/blob/main/llm_based_survey.md" target="_blank">GitHub Repo</a>.</span></li>
       <li><span class="news-pin">Pinned</span> <span class="news-text">Released Awesome-Spatial-VLMs survey on <a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.176231405.57942913/v2" target="_blank">TechRxiv</a> with <a href="https://github.com/vulab-AI/Awesome-Spatial-VLMs" target="_blank">GitHub Repo</a>.</span></li>
-      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">One paper accepted by <strong>CVPR 2026</strong>.</span></li>
-      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">Joined <strong>Bosch Center for Artificial Intelligence</strong> as Research Scientist.</span></li>
-      <li class="news-hidden"><span class="news-date">02/2026</span> <span class="news-text">One paper on improving robustness and reliability in VLMs accepted by <strong>ICLR 2026</strong>.</span></li>
-      <li class="news-hidden"><span class="news-date">12/2025</span> <span class="news-text">Successfully defended PhD thesis!</span></li>
-      <li class="news-hidden"><span class="news-date">10/2025</span> <span class="news-text">One extension paper on unified trajectory imputation and prediction accepted by <strong>TPAMI</strong>.</span></li>
-      <li class="news-hidden"><span class="news-date">08/2025</span> <span class="news-text">Two papers on time-series representation learning &amp; trajectory modeling accepted by <strong>ICDM 2025</strong>; one paper on end-to-end autonomous driving + VLM accepted by <strong>CoRL 2025</strong>.</span></li>
-      <li class="news-hidden"><span class="news-date">01/2025</span> <span class="news-text">One paper on unified trajectory generation accepted by <strong>ICLR 2025</strong>. <a href="https://github.com/colorfulfuture/UniTraj-pytorch" target="_blank">[Code]</a></span></li>
+      <!-- 2025-2026 items - visible by default -->
+      <li><span class="news-date">02/2026</span> <span class="news-text">One paper accepted by <strong>CVPR 2026</strong>.</span></li>
+      <li><span class="news-date">02/2026</span> <span class="news-text">Joined <strong>Bosch Center for Artificial Intelligence</strong> as Research Scientist.</span></li>
+      <li><span class="news-date">02/2026</span> <span class="news-text">One paper on improving robustness and reliability in VLMs accepted by <strong>ICLR 2026</strong>.</span></li>
+      <li><span class="news-date">12/2025</span> <span class="news-text">Successfully defended PhD thesis!</span></li>
+      <li><span class="news-date">10/2025</span> <span class="news-text">One extension paper on unified trajectory imputation and prediction accepted by <strong>TPAMI</strong>.</span></li>
+      <li><span class="news-date">08/2025</span> <span class="news-text">Two papers on time-series representation learning &amp; trajectory modeling accepted by <strong>ICDM 2025</strong>; one paper on end-to-end autonomous driving + VLM accepted by <strong>CoRL 2025</strong>.</span></li>
+      <li><span class="news-date">01/2025</span> <span class="news-text">One paper on unified trajectory generation accepted by <strong>ICLR 2025</strong>. <a href="https://github.com/colorfulfuture/UniTraj-pytorch" target="_blank">[Code]</a></span></li>
+      <!-- 2024 and earlier - hidden by default -->
       <li class="news-hidden"><span class="news-date">02/2024</span> <span class="news-text">Two papers accepted by <strong>CVPR 2024</strong>.</span></li>
       <li class="news-hidden"><span class="news-date">09/2023</span> <span class="news-text">One paper on adaptive optimizer design accepted by <strong>ICDM 2023</strong>; one on graph structure learning accepted by <strong>NeurIPS 2023</strong>.</span></li>
       <li class="news-hidden"><span class="news-date">07/2023</span> <span class="news-text">One paper on layout prediction accepted by <strong>ACM MM 2023</strong>.</span></li>
@@ -479,7 +488,7 @@
     </ul>
     <span class="news-toggle" onclick="toggleNews(this)">Show more</span>
   </section>
-
+ 
   <!-- Education -->
   <section id="education">
     <h2>Education</h2>
@@ -508,7 +517,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Pre-Prints -->
   <section id="preprints">
     <h2>Pre-Prints</h2>
@@ -531,7 +540,7 @@
       </li>
     </ul>
   </section>
-
+ 
   <!-- Publications -->
   <section id="publications">
     <h2>Publications</h2>
@@ -710,7 +719,7 @@
       </li>
     </ul>
   </section>
-
+ 
   <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
@@ -749,7 +758,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Teaching -->
   <section id="teaching">
     <h2>Teaching</h2>
@@ -762,7 +771,7 @@
       <li>CS 3000: Algorithms and Data, Fall 2025</li>
     </ul>
   </section>
-
+ 
   <!-- Awards -->
   <section id="awards">
     <h2>Awards</h2>
@@ -776,7 +785,7 @@
       <li>Third Prize in the 4th China Graduate Future Flight Vehicle Innovation Competition, 2018</li>
     </ul>
   </section>
-
+ 
   <!-- Professional Service -->
   <section id="service">
     <h2>Professional Service</h2>
@@ -789,17 +798,26 @@
       <p>IEEE TPAMI, IEEE TIP, IEEE TNNLS, IEEE TCSVT, IEEE TIV, ACM TKDD, KAIS, Neurocomputing, IEEE RA-L</p>
     </div>
   </section>
-
+ 
 </main>
-
+ 
+<!-- Visitor Map -->
 <div class="visitor-map">
-  <script type='text/javascript' id='clustrmaps' src='//clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400'></script>
+  <h2>Visitors</h2>
+  <div id="clustrmaps-container">
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400"></script>
+  </div>
+  <noscript>
+    <a href="https://clustrmaps.com/site/1byxh" title="Visit tracker">
+      <img src="//clustrmaps.com/map_v2.png?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400" alt="Visitor Map">
+    </a>
+  </noscript>
 </div>
-
+ 
 <footer>
-  &copy; 2026 Yi Xu. Hosted on <a href="https://github.com/colorfulfuture/colorfulfuture.github.io" target="_blank">GitHub</a>.
+  &copy; 2026 Yi Xu. Last updated: April 2026. Hosted on <a href="https://github.com/colorfulfuture/colorfulfuture.github.io" target="_blank">GitHub</a>.
 </footer>
-
+ 
 <script>
 function toggleNews(btn) {
   var items = document.querySelectorAll('.news-hidden');
