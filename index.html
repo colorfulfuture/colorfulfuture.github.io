@@ -815,20 +815,20 @@
 </main>
  
 <!-- Visitor Map -->
-<!-- <div class="visitor-map">
-  <h2>Visitors</h2>
-  <div class="map-container">
-  <script
-    type="text/javascript"
-    id="clustrmaps"
-    src="https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400">
-  </script>
-  </div>
-</div> -->
-
 <div class="visitor-map">
   <h2>Visitors</h2>
-  <div class="map-container" id="clustrmaps-container"></div>
+  <div class="map-container">
+    <script
+      type="text/javascript"
+      id="clustrmaps"
+      src="https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400">
+    </script>
+    <noscript>
+      <a href="https://clustrmaps.com/site/1byxh" title="Visit tracker">
+        <img src="https://clustrmaps.com/map_v2.png?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400" alt="Visitor Map">
+      </a>
+    </noscript>
+  </div>
 </div>
 
 <footer>
@@ -882,20 +882,6 @@
         expandNews();
       }
     });
-  })();
-</script>
-
-<script>
-  (function() {
-    const container = document.getElementById('clustrmaps-container');
-    if (!container) return;
-
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'clustrmaps';
-    script.src = 'https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400';
-
-    container.appendChild(script);
   })();
 </script>
 
