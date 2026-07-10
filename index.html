@@ -106,19 +106,26 @@
       color: var(--text-light);
       margin-bottom: 1rem;
     }
+    .profile-photo-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
     .profile-links {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 180px;
     }
-    .profile-links a {
-      display: inline-flex;
+    .profile-links a,
+    .profile-links span {
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
       font-size: 0.85rem;
       color: var(--text-light);
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.7rem;
       border: 1px solid var(--border);
       border-radius: 6px;
       transition: all 0.2s;
@@ -142,12 +149,54 @@
       line-height: 1.7;
     }
     .profile-contact {
-      margin-top: 0.8rem;
+      margin-top: 1.2rem;
+    }
+    .profile-contact h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .profile-contact a,
+    .profile-contact span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 0.9rem;
       color: var(--text-light);
+      padding: 0.2rem 0;
+      position: relative;
     }
-    .profile-contact a { color: var(--accent); }
- 
+    .profile-contact a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .wechat-item {
+      cursor: default;
+    }
+    .wechat-item .wechat-qr {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-bottom: 0.4rem;
+      width: 260px;
+      padding: 0.6rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+    .wechat-item .wechat-qr img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+    .wechat-item:hover .wechat-qr {
+      display: block;
+    }
+
     /* Sections */
     section {
       padding: 2rem 0;
@@ -387,7 +436,7 @@
     /* Responsive */
     @media (max-width: 700px) {
       .profile { flex-direction: column; align-items: center; text-align: center; }
-      .profile-links { justify-content: center; }
+      .profile-links { align-items: center; }
       .profile-photo { width: 140px; height: 140px; }
       nav .nav-links { gap: 0.8rem; }
       nav .nav-links a { font-size: 0.78rem; }
@@ -402,7 +451,7 @@
  
 <nav>
   <div class="nav-inner">
-    <span class="nav-name">Homepage of Yi Xu</span>
+    <span class="nav-name">Yi Xu's Homepage</span>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#news">News</a>
@@ -420,10 +469,8 @@
  
   <!-- Profile -->
   <section class="profile" id="about">
-    <img class="profile-photo" src="assets/yixu.png" alt="Yi Xu">
-    <div class="profile-info">
-      <h1>Yi Xu</h1>
-      <div class="title">Research Scientist, Bosch Center for Artificial Intelligence</div>
+    <div class="profile-photo-col">
+      <img class="profile-photo" src="assets/yixu.png" alt="Yi Xu">
       <div class="profile-links">
         <a href="https://github.com/colorfulfuture" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://scholar.google.com/citations?user=12bRAdsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i> Scholar</a>
@@ -431,29 +478,25 @@
         <a href="https://www.linkedin.com/in/yi-xu-884755185/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://www.zhihu.com/people/a-ha-ha-52-57" target="_blank" rel="noopener noreferrer"><i class="fas fa-pen-nib"></i> Zhihu</a>
       </div>
+    </div>
+    <div class="profile-info">
+      <h1>About Me</h1>
       <div class="profile-bio">
-        I am a Research Scientist working on autonomous driving intelligence. My long-term goal is to advance autonomous driving from modular pipelines toward unified, foundation-model-driven systems that are robust, adaptable, and deployable in safety-critical environments. I am open to research collaborations in autonomous driving, VLM, and VLA that advance next-generation intelligent systems.
+        I am a Research Scientist at Bosch, working on autonomous driving intelligence.
+        My long-term goal is to advance autonomous driving from modular pipelines toward unified, foundation-model-driven systems that are robust, adaptable, and deployable in safety-critical environments.
+        I am open to research collaborations in autonomous driving, VLM, and VLA that advance next-generation intelligent systems.
         <div class="highlight">
-          <i class="fas fa-bullhorn"></i> Our team at the Bosch Center for Artificial Intelligence always has <strong> internship openings</strong> for research on VLA+AD and related topics. Feel free to reach out!
+          <i class="fas fa-bullhorn"></i> Our team at the Bosch always has <strong> internship openings</strong> for research on VLA+AD and related topics. Feel free to reach out!
         </div>
       </div>
       <div class="profile-contact">
-        <i class="fas fa-envelope"></i> <a href="mailto:xu.yi@northeastern.edu">xu.yi@northeastern.edu</a> &nbsp;|&nbsp; <a href="mailto:heyyixu@gmail.com">heyyixu@gmail.com</a>
-        &nbsp;|&nbsp; <i class="fab fa-weixin"></i> 578138534
+        <h3>Contact</h3>
+        <a href="mailto:heyyixu@gmail.com"><i class="fas fa-envelope"></i> heyyixu@gmail.com</a>
+        <a href="mailto:yi.xu3@us.bosch.com"><i class="fas fa-envelope"></i> yi.xu3@us.bosch.com</a>
+        <span class="wechat-item"><i class="fab fa-weixin"></i> WeChat: 578138534
+          <span class="wechat-qr"><img src="assets/wechat-qr.jpeg" alt="WeChat QR code"></span>
+        </span>
       </div>
-    </div>
-  </section>
- 
-  <!-- Research Interests -->
-  <section id="interests">
-    <h2>Research Interests</h2>
-    <div class="tags">
-      <span>Computer Vision</span>
-      <span>Autonomous Driving</span>
-      <span>Behavior/Action Prediction</span>
-      <span>Vision-Language Models</span>
-      <span>Vision-Language-Action Models</span>
-      <span>Basketball</span>
     </div>
   </section>
  
@@ -820,12 +863,12 @@
   <div class="map-container">
     <script
       type="text/javascript"
-      id="clustrmaps"
-      src="https://clustrmaps.com/map_v2.js?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400">
+      id="mapmyvisitors"
+      src="//mapmyvisitors.com/map.js?d=93WHYxeYUD3yYxVXNn7mAHYiemdqOayYCNFFF8DOM2A&cl=ffffff&w=a">
     </script>
     <noscript>
-      <a href="https://clustrmaps.com/site/1byxh" title="Visit tracker">
-        <img src="https://clustrmaps.com/map_v2.png?d=V9FXsU_sfaUBwPcvNiNMFJq21YMuGG4PwdqXkzcn2Xo&cl=ffffff&w=400" alt="Visitor Map">
+      <a href="https://mapmyvisitors.com/web/1c6gb" title="Visit tracker">
+        <img src="https://mapmyvisitors.com/map.png?d=93WHYxeYUD3yYxVXNn7mAHYiemdqOayYCNFFF8DOM2A&cl=ffffff" alt="Visitor Map">
       </a>
     </noscript>
   </div>
